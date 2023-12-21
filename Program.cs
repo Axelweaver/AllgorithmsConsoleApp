@@ -67,6 +67,23 @@ internal class Program
         PrintArray(array);
         timeAction();
 
+        Console.WriteLine("\n");
+        Console.WriteLine(new string('=', 100));
+
+        Console.WriteLine("1. Шейкерная сортировка\n");
+
+        array = CreateArray();
+
+        PrintArray(array);
+        Console.WriteLine("Начинаем сортировку..");
+        timeAction = PrintTime(DateTime.Now);
+        ShakerSorting.Sort(array, timeAction);
+
+        Console.WriteLine("Завершили сортировку");
+        PrintArray(array);
+        timeAction();
+
+
 
     }
 
