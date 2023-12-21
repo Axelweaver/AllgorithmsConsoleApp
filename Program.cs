@@ -104,7 +104,8 @@ internal class Program
         return () =>
         {
             var timeDiffMillisec = (DateTime.Now - startTime).Milliseconds;
-            Console.WriteLine($"Прошло {timeDiffMillisec}мс");
+            var timeDiffMicrosec = (DateTime.Now - startTime).Microseconds;
+            Console.WriteLine($"Прошло {timeDiffMillisec},{timeDiffMicrosec}мс");
         };
     }
 }
