@@ -50,40 +50,11 @@ internal class Program
 
         Console.WriteLine("СОРТИРОВКИ\n");
 
-        Console.WriteLine("1. Сортировка пузырьком\n");
+        PrintSorting("1. Сортировка пузырьком. (Bubble Sort)", BubbleSorting.DescendingSort);
 
-        var array = CreateArray();
+        PrintSorting("2. Шейкерная сортировка. (Shaker Sort)", ShakerSorting.Sort);
 
-        PrintArray(array);
-
-        var startDateTime = DateTime.Now;
-
-        Console.WriteLine("Начинаем сортировку..");
-
-        var timeAction = PrintTime(startDateTime);
-        array = BubbleSorting.DescendingSort(array, timeAction);
-
-        Console.WriteLine("Завершили сортировку");
-        PrintArray(array);
-        timeAction();
-
-        Console.WriteLine("\n");
-        Console.WriteLine(new string('=', 100));
-
-        Console.WriteLine("1. Шейкерная сортировка\n");
-
-        array = CreateArray();
-
-        PrintArray(array);
-        Console.WriteLine("Начинаем сортировку..");
-        timeAction = PrintTime(DateTime.Now);
-        ShakerSorting.Sort(array, timeAction);
-
-        Console.WriteLine("Завершили сортировку");
-        PrintArray(array);
-        timeAction();
-
-
+        PrintSorting("3. Сортировка расческой. (Combo Sort)", ComboSorting.Sort);
 
     }
 
@@ -91,12 +62,34 @@ internal class Program
     {
         return new int[] { 100, 1, 4, 121, 100, 3, 400, 45, 56, 6 };
     }
+    private static void PrintSorting(string name, Func<int[], int[]> sortingAction)
+    {
+        Console.WriteLine("\n");
+        Console.WriteLine(new string('=', 100));
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine($"{name}");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine(new string('=', 100));
+        var array = CreateArray();
+
+        PrintArray(array);
+        Console.WriteLine("Начинаем сортировку..");
+        var timeAction = PrintTime(DateTime.Now);
+        sortingAction(array);
+
+        Console.Write("Завершили сортировку.");
+        timeAction();
+        PrintArray(array);
+
+    }
+
 
     private static void PrintArray(int[] array)
     {
         var arrayString = string.Join(',', array.Select(x => x.ToString()));
-
-        Console.WriteLine($"Массив: [{arrayString}]");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine($"\nМассив: [{arrayString}]\n");
+        Console.ForegroundColor = ConsoleColor.White;
     }
 
     private static Action PrintTime(DateTime startTime)
@@ -105,7 +98,9 @@ internal class Program
         {
             var timeDiffMillisec = (DateTime.Now - startTime).Milliseconds;
             var timeDiffMicrosec = (DateTime.Now - startTime).Microseconds;
-            Console.WriteLine($"Прошло {timeDiffMillisec},{timeDiffMicrosec}мс");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($" (Прошло {timeDiffMillisec},{timeDiffMicrosec}мс )\n");
+            Console.ForegroundColor = ConsoleColor.White;
         };
     }
 }

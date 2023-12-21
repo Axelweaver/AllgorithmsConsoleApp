@@ -2,7 +2,7 @@
 {
     internal class BubbleSorting
     {
-        public static int[] DescendingSort(int[] array, Action printAction)
+        public static int[] DescendingSort(int[] array)
         {
             Console.WriteLine("Bubble sort");
 
@@ -16,7 +16,6 @@
                         temp = array[j + 1];
                         array[j + 1] = array[j];
                         array[j] = temp;
-                        printAction();
                     }
                 }
             }

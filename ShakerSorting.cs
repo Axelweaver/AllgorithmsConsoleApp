@@ -2,7 +2,7 @@
 {
     internal class ShakerSorting
     {
-        public static int[] Sort(int[] array, Action printAction)
+        public static int[] Sort(int[] array)
         {
             Console.WriteLine("Shake sorting");
 
@@ -31,7 +31,6 @@
                     }
                 }
                 left++;
-                printAction();
             }
 
             return array;
