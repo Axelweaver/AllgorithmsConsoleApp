@@ -1,1 +1,1 @@
-# AlgoritmesConsoleApp
+# AllgorithmsConsoleApp
