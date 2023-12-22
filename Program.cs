@@ -58,12 +58,22 @@ internal class Program
 
         PrintSorting("4. Сортировка вставками. (Insertion Sort)", InsertionSorting.Sort);
 
+        PrintSorting("5. Быстрая сортировка. (Quick Sort)", QuickSorting.Sort);
+
     }
 
     private static int[] CreateArray()
     {
-        return new int[] { 100, 1, 4, 121, 100, 3, 400, 45, 56, 6, 77, 99, 155, 388, 5, 255 };
+        return new int[] { 100, 1, 4, 121, 100, 3, 400, 45, 56, 6, 77, 99, 155, 388, 5, 255, 177, 7, 201,
+            13, 55, 86, 2, 19, 144, 15, 63, 277};
     }
+
+    //private static int[] AppQuickSort(int[] array)
+    //{
+    //    array = array.QuickSort<int>().ToArray();
+
+    //    return array;
+    //}
 
     private static void PrintSorting(string name, Func<int[], int[]> sortingAction)
     {
