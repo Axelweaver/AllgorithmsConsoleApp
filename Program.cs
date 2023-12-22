@@ -56,12 +56,15 @@ internal class Program
 
         PrintSorting("3. Сортировка расческой. (Combo Sort)", ComboSorting.Sort);
 
+        PrintSorting("4. Сортировка вставками. (Insertion Sort)", InsertionSorting.Sort);
+
     }
 
     private static int[] CreateArray()
     {
-        return new int[] { 100, 1, 4, 121, 100, 3, 400, 45, 56, 6 };
+        return new int[] { 100, 1, 4, 121, 100, 3, 400, 45, 56, 6, 77, 99, 155, 388, 5, 255 };
     }
+
     private static void PrintSorting(string name, Func<int[], int[]> sortingAction)
     {
         Console.WriteLine("\n");
