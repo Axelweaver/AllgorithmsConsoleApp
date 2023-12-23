@@ -73,3 +73,37 @@
 
 ![График сложности алгоритмов](/img/bigOcomplexityChart.png)
 
+### Алогоритмы сортировки
+
+#### Пузырьковая сортировка (Bubble sort)
+
+Или **сортировка простыми обменами**. Принцип действия прост: обходимо массив от начала до конца, попутно меняя местами неотсортированные соседние элементы. В результате первого прохода на последнее место "всплывёт" максимальный элемент. Затем нужно снова обойти неотсортированную часть массива (от первого до последнего элементов). Сложность такого алгоритма всегда **O(n2)**
+
+В коде этого репозитория это класс [BubbleSorting](/BubbleSorting.cs)
+
+```csharp
+    internal class BubbleSorting
+    {
+        public static int[] DescendingSort(int[] array)
+        {
+            Console.WriteLine("Bubble sort");
+
+            int temp;
+            for(var i = 0; i < array.Length - 1; i++)
+            {
+                for(var j = 0; j < array.Length - i - 1; j++)
+                {
+                    if (array[j + 1] > array[j])
+                    {
+                        temp = array[j + 1];
+                        array[j + 1] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+
+            return array;
+        }
+    }
+```
+
