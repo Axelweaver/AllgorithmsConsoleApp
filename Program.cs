@@ -41,13 +41,6 @@ internal class Program
             13, 55, 86, 2, 19, 144, 15, 63, 277};
     }
 
-    //private static int[] AppQuickSort(int[] array)
-    //{
-    //    array = array.QuickSort<int>().ToArray();
-
-    //    return array;
-    //}
-
     /// <summary>
     /// Вспомогательный метод для вывода на экран алгоритма сортировки
     /// </summary>

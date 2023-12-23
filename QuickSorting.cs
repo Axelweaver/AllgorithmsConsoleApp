@@ -2,24 +2,6 @@
 {
     public static class QuickSorting
     {
-        // Not working
-        public static IEnumerable<T> QuickSort<T>(this IEnumerable<T> list) where T: IComparable<T>
-        {
-            //Console.WriteLine("Quick sorting");
-
-            if (!list.Any())
-            {
-                return Enumerable.Empty<T>();
-            }
-
-            var pivot = list.First();
-            var smaller = list.Skip(1).Where(item => item.CompareTo(pivot) <= 0).QuickSort();
-            var larger = list.Skip(1).Where(item => item.CompareTo(pivot) > 0).QuickSort();
-
-            
-            return smaller.Concat(new[] { pivot }).Concat(larger);
-        }
-
         public static int[] Sort(int[] array)
         {
             return SortArray(array, 0, array.Length - 1);
