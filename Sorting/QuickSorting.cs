@@ -1,4 +1,4 @@
-﻿namespace AlgoritmesConsoleApp
+﻿namespace AlgoritmesConsoleApp.Sorting
 {
     public static class QuickSorting
     {

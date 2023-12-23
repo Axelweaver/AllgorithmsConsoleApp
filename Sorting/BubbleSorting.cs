@@ -1,4 +1,4 @@
-﻿namespace AlgoritmesConsoleApp
+﻿namespace AlgoritmesConsoleApp.Sorting
 {
     internal class BubbleSorting
     {
@@ -7,9 +7,9 @@
             Console.WriteLine("Bubble sort");
 
             int temp;
-            for(var i = 0; i < array.Length - 1; i++)
+            for (var i = 0; i < array.Length - 1; i++)
             {
-                for(var j = 0; j < array.Length - i - 1; j++)
+                for (var j = 0; j < array.Length - i - 1; j++)
                 {
                     if (array[j + 1] > array[j])
                     {

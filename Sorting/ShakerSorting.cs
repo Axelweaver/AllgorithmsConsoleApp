@@ -1,4 +1,6 @@
-﻿namespace AlgoritmesConsoleApp
+﻿using AlgoritmesConsoleApp.Extensions;
+
+namespace AlgoritmesConsoleApp.Sorting
 {
     internal class ShakerSorting
     {
@@ -12,35 +14,28 @@
 
             while (left < right)
             {
-                for(int i = left; i < right; i++)
+                for (int i = left; i < right; i++)
                 {
                     count++;
                     if (array[i] > array[i + 1])
                     {
-                        Swap(array, i, i + 1);
+                        array.Swap(i, i + 1);
                     }
                 }
                 right--;
 
-                for(int i = right; i > left; i--)
+                for (int i = right; i > left; i--)
                 {
                     count++;
                     if (array[i - 1] > array[i])
                     {
-                        Swap(array, i - 1, i);
+                        array.Swap(i - 1, i);
                     }
                 }
                 left++;
             }
 
             return array;
-        }
-
-        private static void Swap(int[] array, int i, int j)
-        {
-            int glass = array[i];
-            array[i] = array[j];
-            array[j] = glass;
         }
     }
 }

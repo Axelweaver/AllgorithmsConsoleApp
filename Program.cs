@@ -1,4 +1,4 @@
-﻿using AlgoritmesConsoleApp;
+﻿using AlgoritmesConsoleApp.Sorting;
 
 /// <summary>
 /// Основной класс программы
@@ -27,7 +27,9 @@ internal class Program
 
         PrintSorting("4. Сортировка вставками. (Insertion Sort)", InsertionSorting.Sort);
 
-        PrintSorting("5. Быстрая сортировка. (Quick Sort)", QuickSorting.Sort);
+        PrintSorting("5. Сортировка выбором. (Selection Sort)", SelectionSorting.Sort);
+
+        PrintSorting("6. Быстрая сортировка. (Quick Sort)", QuickSorting.Sort);
 
     }
 
