@@ -29,7 +29,9 @@ internal class Program
 
         PrintSorting("5. Сортировка выбором. (Selection Sort)", SelectionSorting.Sort);
 
-        PrintSorting("6. Быстрая сортировка. (Quick Sort)", QuickSorting.Sort);
+        PrintSorting("6. Сортировка Шелла. (Shell Sort)", ShellSorting.Sort);
+
+        PrintSorting("7. Быстрая сортировка. (Quick Sort)", QuickSorting.Sort);
 
     }
 
