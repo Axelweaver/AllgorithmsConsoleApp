@@ -1,49 +1,18 @@
 ﻿using AlgoritmesConsoleApp;
 
+/// <summary>
+/// Основной класс программы
+/// </summary>
 internal class Program
 {
+    /// <summary>
+    /// Главный метод как точка входа в программу
+    /// </summary>
+    /// <param name="args">Принимаемые аргументы перед запуском</param>
     private static void Main(string[] args)
     {
         Console.WriteLine("press enter to continue");
         Console.ReadLine();
-
-        Console.WriteLine("Стек\n");
-
-        var stackInstance = new Stack<string>();
-
-        stackInstance.Push("Helen");
-        stackInstance.Push("John");
-        stackInstance.Push("Robert");
-        stackInstance.Push("Arnold");
-
-        var stackCount = stackInstance.Count;
-        Console.WriteLine($"В стеке {stackCount} элементов");
-
-        while(stackInstance.Count > 0)
-        {
-            var stackElement = stackInstance.Pop();
-            Console.WriteLine($"Элемент стека: {stackElement}");
-        }
-
-        Console.WriteLine($"В стеке {stackInstance.Count} элементов");
-        Console.WriteLine("\n");
-        Console.WriteLine(new string('=', 100));
-
-        Console.WriteLine("Очередь\n");
-
-        var queueInstance = new Queue<string>();
-
-        queueInstance.Enqueue("Helen");
-        queueInstance.Enqueue("John");
-        queueInstance.Enqueue("Robert");
-        queueInstance.Enqueue("Arnold");
-        Console.WriteLine($"Количество в очереди: {queueInstance.Count}");
-        while(queueInstance.Count > 0)
-        {
-            var queueValue = queueInstance.Dequeue();
-            Console.WriteLine($"Элемент очереди:{queueValue}");
-        }
-        Console.WriteLine($"Количество в очереди: {queueInstance.Count}");
         
         Console.WriteLine("\n");
         Console.WriteLine(new string('=', 100));
@@ -62,6 +31,10 @@ internal class Program
 
     }
 
+    /// <summary>
+    /// Метод, создающий целочисленный массив
+    /// </summary>
+    /// <returns></returns>
     private static int[] CreateArray()
     {
         return new int[] { 100, 1, 4, 121, 100, 3, 400, 45, 56, 6, 77, 99, 155, 388, 5, 255, 177, 7, 201,
@@ -75,6 +48,11 @@ internal class Program
     //    return array;
     //}
 
+    /// <summary>
+    /// Вспомогательный метод для вывода на экран алгоритма сортировки
+    /// </summary>
+    /// <param name="name">Название сортировки</param>
+    /// <param name="sortingAction">Делегат для самой сортировки</param>
     private static void PrintSorting(string name, Func<int[], int[]> sortingAction)
     {
         Console.WriteLine("\n");
@@ -96,7 +74,10 @@ internal class Program
 
     }
 
-
+    /// <summary>
+    /// Вспомогательный метод для вывода на экран содержимого массива
+    /// </summary>
+    /// <param name="array">Массив</param>
     private static void PrintArray(int[] array)
     {
         var arrayString = string.Join(',', array.Select(x => x.ToString()));
@@ -105,6 +86,11 @@ internal class Program
         Console.ForegroundColor = ConsoleColor.White;
     }
 
+    /// <summary>
+    /// Вспомогательный метод для вывода разницы времени в миллисекундах с микросекундами
+    /// </summary>
+    /// <param name="startTime">Начальное время</param>
+    /// <returns></returns>
     private static Action PrintTime(DateTime startTime)
     {
         return () =>
